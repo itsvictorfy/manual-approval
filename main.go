@@ -68,6 +68,7 @@ func newCommentLoopChannel(ctx context.Context, apprv *approvalEnvironment, clie
 				}
 				channel <- 0
 				fmt.Println("Workflow manual approval completed")
+				fmt.Println("APPROVAL_RESULT=approved")
 				close(channel)
 			case approvalStatusDenied:
 				newState := "closed"
@@ -86,7 +87,8 @@ func newCommentLoopChannel(ctx context.Context, apprv *approvalEnvironment, clie
 					channel <- 1
 					close(channel)
 				}
-				channel <- 1
+				fmt.Println("APPROVAL_RESULT=denied")
+				channel <- 0
 				close(channel)
 			}
 
