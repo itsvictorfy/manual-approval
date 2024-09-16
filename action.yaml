@@ -34,7 +34,6 @@ inputs:
 outputs:
   approval-result:
     description: The approval result of the workflow (approved/denied)
-    value: ${{ steps.set-output.outputs.approval_result }}
 runs:
   using: docker
   image: docker://docker.io/itsvictorfy/manual-approval:testv2
