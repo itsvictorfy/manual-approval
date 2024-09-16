@@ -37,6 +37,6 @@ outputs:
     value: ${{ steps.set-output.outputs.approval_result }}
 runs:
   using: docker
-  image: docker://docker.io/itsvictorfy/manual-approval:testv1
+  image: docker://docker.io/itsvictorfy/manual-approval:testv2
 
 
